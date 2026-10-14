@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Банковские карты</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Банковские карты</h1>
+    <div class="layout">
+      <form id="cardForm" autocomplete="off">
+        <label for="bank">Банк</label>
+        <select id="bank" required>
+          <option value="">Выберите банк</option>
+          <option value="Сбербанк">Сбербанк</option>
+          <option value="Т-Банк">Т-Банк</option>
+          <option value="Альфа-Банк">Альфа-Банк</option>
+        </select>
+
+        <label for="system">Платёжная система</label>
+        <select id="system" required>
+          <option value="">Выберите систему</option>
+          <option value="МИР">МИР</option>
+          <option value="Visa">Visa</option>
+          <option value="Mastercard">Mastercard</option>
+        </select>
+
+        <label for="number">Номер карты</label>
+        <input id="number" type="text" inputmode="numeric" maxlength="19" placeholder="0000 0000 0000 0000" required>
+
+        <label for="holder">Имя держателя</label>
+        <input id="holder" type="text" maxlength="40" placeholder="IVAN IVANOV" required>
+
+        <label>Срок действия</label>
+        <div class="expiry">
+          <select id="month" required aria-label="Месяц">
+            <option value="">Месяц</option>
+          </select>
+          <select id="year" required aria-label="Год">
+            <option value="">Год</option>
+          </select>
+        </div>
+        <p id="error" class="error" role="alert" hidden></p>
+        <button type="submit">Добавить карту</button>
+      </form>
+
+      <div class="card" id="preview">
+        <div class="card-top">
+          <div class="bank-logo" id="bankLogo"></div>
+          <div class="chip" aria-hidden="true"></div>
+        </div>
+        <div class="card-number" id="cardNumber">0000 0000 0000 0000</div>
+        <div class="card-bottom">
+          <div class="card-details">
+            <div id="cardHolder">ИМЯ ФАМИЛИЯ</div>
+            <div id="cardExpiry">ММ/ГГ</div>
+          </div>
+          <div class="system-logo" id="systemLogo"></div>
+        </div>
+      </div>
+    </div>
+
+    <h2>Список карт</h2>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Банк</th>
+            <th>Система</th>
+            <th>Номер карты</th>
+            <th>Держатель</th>
+            <th>Срок</th>
+          </tr>
+        </thead>
+        <tbody id="cardTable"></tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

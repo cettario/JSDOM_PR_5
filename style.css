@@ -1,0 +1,249 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 25px 15px;
+  background: #f3f3f3;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 25px 30px 35px;
+}
+
+h1 {
+  margin: 0 0 25px;
+  font-size: 25px;
+}
+
+h2 {
+  margin: 35px 0 12px;
+  font-size: 20px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(290px, 1fr);
+  align-items: start;
+  gap: 35px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+input, select {
+  height: 39px;
+  padding: 8px 10px;
+  border: 1px solid #bcbcbc;
+  border-radius: 4px;
+  font: inherit;
+  background: white;
+}
+
+.expiry {
+  display: flex;
+  gap: 12px;
+}
+
+.expiry select {
+  flex: 1;
+  min-width: 0;
+}
+
+button {
+  margin-top: 11px;
+  padding: 11px;
+  color: white;
+  background: #2676d4;
+  border: 0;
+  border-radius: 4px;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1759a7;
+}
+
+.error {
+  margin: 0;
+  color: #bf2424;
+  font-size: 13px;
+}
+
+.card {
+  min-height: 215px;
+  padding: 21px 23px;
+  border-radius: 13px;
+  color: white;
+  background: #334964;
+  box-shadow: 0 3px 9px #0002;
+}
+
+.card-top, .card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bank-logo {
+  min-height: 32px;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.logo-sber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #22a84a;
+  font-size: 22px;
+}
+
+.logo-tbank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 7px;
+  background: #ffdf27;
+  color: black;
+  font-size: 22px;
+}
+
+.logo-alfa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #ed2929;
+  font-size: 24px;
+}
+
+.chip {
+  width: 42px;
+  height: 29px;
+  background: #dbcea1;
+  border: 1px solid #bba96f;
+  border-radius: 6px;
+}
+
+.card-number {
+  margin: 35px 0 23px;
+  font-size: 23px;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.card-bottom {
+  gap: 12px;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.system-logo {
+  min-width: 65px;
+  text-align: right;
+}
+
+.logo-mir {
+  color: #a5edec;
+  font-size: 24px;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.logo-visa {
+  color: white;
+  font-size: 25px;
+  font-weight: 900;
+  font-style: italic;
+}
+
+.logo-mastercard {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 34px;
+}
+
+.logo-mastercard span {
+  display: inline-block;
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+}
+
+.logo-mastercard span:first-child {
+  background: #ed3227;
+}
+
+.logo-mastercard span:last-child {
+  margin-left: -10px;
+  background: #ffb121;
+  opacity: .9;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 11px 10px;
+  border: 1px solid #d4d4d4;
+  text-align: left;
+}
+
+th {
+  background: #efefef;
+}
+
+@media (max-width: 750px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  main {
+    padding: 20px 15px;
+  }
+
+  .card-number {
+    font-size: clamp(15px, 5.5vw, 23px);
+  }
+}
